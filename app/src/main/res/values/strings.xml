@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PenyimpananLokalApp</string>
+    <string name="file_name">File Name</string>
+    <string name="view">View</string>
+    <string name="file_data">File Data</string>
+    <string name="file_nama">file name</string>
+    <string name="data">data</string>
+    <string name="save">Save</string>
+</resources>
