@@ -6,4 +6,6 @@
     <string name="file_nama">file name</string>
     <string name="data">data</string>
     <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="catatan_android_studio">Catatan Android Studio</string>
 </resources>

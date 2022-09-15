@@ -9,11 +9,37 @@ disesuaikan dengan tampilan smartphone. -->
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <!-- pada EditText berikut memiliki id "editData" dengan
+             layout margin awal dan akhirnya memiliki ukuran 25dp
+             dan 55dp, layout panjang lebarnya menggunakan wrap content
+             atau disesuaikan dengan isi kontennya.-->
+    <EditText
+        android:id="@+id/editData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignStart="@+id/editFile"
+        android:layout_alignLeft="@+id/editFile"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="55dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/data"
+        android:lines="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.672"
+        tools:ignore="RtlHardcoded,TextFields" />
+
     <!-- pada TextView berikut berisi text "File name", dengan
-         id "textView", menggunakan layout panjang dan lebar
-         wrap content atau disesuaikan dengan isi kontennya.
-         layout margin awalnya memiliki ukuran 32dp dan layout
-          akhirnya memiliki ukuran 20dp.-->
+        id "textView", menggunakan layout panjang dan lebar
+        wrap content atau disesuaikan dengan isi kontennya.
+        layout margin awalnya memiliki ukuran 32dp dan layout
+         akhirnya memiliki ukuran 20dp .-->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -29,7 +55,7 @@ disesuaikan dengan tampilan smartphone. -->
         app:layout_constraintEnd_toStartOf="@+id/editFile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.36"
+        app:layout_constraintVertical_bias="0.442"
         tools:ignore="MissingConstraints,RtlHardcoded" />
 
     <!-- pada EditText berikut berfungsi sebagai wadah user untuk
@@ -47,16 +73,18 @@ disesuaikan dengan tampilan smartphone. -->
         android:layout_alignBottom="@+id/textView"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="55dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/file_nama"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:paddingLeft="10dp"
+        android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.362"
-        android:autofillHints=""
+        app:layout_constraintVertical_bias="0.446"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <!-- pada TextView berikut berisi text "File data", dengan
@@ -79,75 +107,7 @@ disesuaikan dengan tampilan smartphone. -->
         app:layout_constraintEnd_toStartOf="@+id/editData"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.557"
-        tools:ignore="RtlHardcoded" />
-
-    <!-- pada EditText berikut memiliki id "editData" dengan
-         layout margin awal dan akhirnya memiliki ukuran 25dp
-         dan 55dp, layout panjang lebarnya menggunakan wrap content
-         atau disesuaikan dengan isi kontennya.-->
-    <EditText
-        android:id="@+id/editData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignStart="@+id/editFile"
-        android:layout_alignLeft="@+id/editFile"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="55dp"
-        android:ems="10"
-        android:hint="@string/data"
-        android:lines="5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.576"
-        android:autofillHints=""
-        tools:ignore="RtlHardcoded,TextFields" />
-
-    <!-- pada Button Save tersebut digunakan untuk menyimpan file name
-         dan file edit yang telah dimasukkan. yang memiliki id "btnSave"
-         memiliki layout panjang dan lebar wrap content atau disesuaikan
-         dengan isi kontennya, -->
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="18dp"
-        android:text="@string/save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.334"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8"
-        tools:ignore="RtlHardcoded" />
-
-    <!-- pada Button View tersebut digunakan untuk menampilkan isi dari
-         file edit yang sebelumnya telah dimasukkan dengan cara memasukkan
-         nama file setelah itu klik tombol view.
-         button tersebut memiliki id "btnView", dengan layout panjang dan
-         lebarnya menggunakan wrap content atau disesuaikan dengan isi
-         kontennya. -->
-    <Button
-        android:id="@+id/btnView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btnSave"
-        android:layout_alignEnd="@+id/editData"
-        android:layout_alignRight="@+id/editData"
-        android:text="@string/view"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.656"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintVertical_bias="0.639"
         tools:ignore="RtlHardcoded" />
 
     <!-- ImageView memuat gambar dengan id "imageView",
@@ -160,10 +120,87 @@ disesuaikan dengan tampilan smartphone. -->
         android:layout_height="122dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.085"
+        app:layout_constraintVertical_bias="0.206"
         app:srcCompat="@drawable/android"
         tools:ignore="ContentDescription" />
+
+    <!-- pada Button Delete tersebut digunakan untuk menghapus isi dari file yang telah dimasukkan
+             button tersebut memiliki id "btnDelete", dengan layout panjang dan
+             lebarnya menggunakan wrap content atau disesuaikan dengan isi
+             kontennya. -->
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.831"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.871" />
+
+    <!-- pada Button View tersebut digunakan untuk menampilkan isi dari
+             file edit yang sebelumnya telah dimasukkan dengan cara memasukkan
+             nama file setelah itu klik tombol view.
+             button tersebut memiliki id "btnView", dengan layout panjang dan
+             lebarnya menggunakan wrap content atau disesuaikan dengan isi
+             kontennya. -->
+    <Button
+        android:id="@+id/btnView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnSave"
+        android:layout_alignEnd="@+id/editData"
+        android:layout_alignRight="@+id/editData"
+        android:text="@string/view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.871"
+        tools:ignore="RtlHardcoded" />
+
+    <!-- pada Button Save tersebut digunakan untuk menyimpan file name
+     dan file edit yang telah dimasukkan. yang memiliki id "btnSave"
+     memiliki layout panjang dan lebar wrap content atau disesuaikan
+     dengan isi kontennya, -->
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="18dp"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.871"
+        tools:ignore="RtlHardcoded" />
+
+    <!-- ImageView memuat gambar dengan id "imageView3",
+         layout wrap content, menggunakan style bold, size 24sp. -->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Catatan Android Studio"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

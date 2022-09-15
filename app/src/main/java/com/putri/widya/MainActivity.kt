@@ -8,8 +8,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import java.io.*
+import com.putri.widya.databinding.ActivityMainBinding
 
 // pada class MainActivity memuat bundle untuk format semua source kode pada aplikasi.
+lateinit var binding: ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,12 +22,15 @@ class MainActivity : AppCompatActivity() {
         // pada variabel fileData menggunakan EditText dengan idnya "editData".
         val fileName = findViewById<EditText>(R.id.editFile)
         val fileData = findViewById<EditText>(R.id.editData)
-
         // script dibawah digunakan untuk proses menyimpan dan menampilkan data,
         // pada variabel btnSave menggunakan Button dengan idnya "btnSave",
         // pada variabel btnView menggunakan Button dengan idnya "btnView".
         val btnSave = findViewById<Button>(R.id.btnSave)
         val btnView = findViewById<Button>(R.id.btnView)
+        val btnDelete = findViewById<Button>(R.id.btnDelete)
+
+        //Deklarasi nilai awal untuk variabel hasil
+        var hasil ="";
 
         // pada button save saat di klik akan menyimpan file name dengan tipe data
         // string dan file data dengan tipe data string.
@@ -54,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         // jika file name yang dimasukkan tidak ada maka akan terjadi pesan error
         // yaitu "file name cannot be blank".
         btnView.setOnClickListener(View.OnClickListener {
-            val filename = fileName.text.toString()
+            val filename = fileName.text.toString()+".txt"
             if(filename.toString()!=null && filename.toString().trim()!=""){
                 var fileInputStream: FileInputStream? = null
                 fileInputStream = openFileInput(filename)
@@ -71,5 +76,33 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext,"file name cannot be blank",Toast.LENGTH_LONG).show()
             }
         })
+
+        btnDelete.setOnClickListener(View.OnClickListener {
+
+            try {
+                val filename = fileName.text.toString()+".txt"
+                //Mencari direktori file
+                val dir = filesDir
+                //Menemukan file
+                val file = File(dir, filename)
+                //file dihapus
+                file.delete()
+                //set ulang hasil
+                hasil = ""
+                //Menangkap error dan diabaikan
+            }catch (e: Exception) {
+                //muncul pop up "Tidak bisa dihaspus"
+                Toast.makeText(this, "Tidak bisa dihapus", Toast.LENGTH_LONG).show()
+                e.printStackTrace()
+            }
+
+            //bersihkan text
+            fileName.text.clear()
+            fileData.text.clear()
+
+
+        })
+
+
     }
 }
